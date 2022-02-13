@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title th:text="${title} + ' &mdash; Home'" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <header>
+        <h1 th:text="${title}" />
+    </header>
+    <main>
+        <div th:each="newsLine : ${news}">
+            <section th:each="news : ${newsLine}" th:class="news-block">
+                <div class="news-block-author-line"><th:block th:each="newsAuthor, newsAuthorIterationStatus : ${news.authors}"><th:block th:if="${not newsAuthorIterationStatus.first}" th:text="', '" /><span th:text="${newsAuthor.name}" /></th:block></div>
+                <h2>
+                    <small th:text="${news.theme.name}" />
+                    <a th:href="@{/} + ${news.id}" th:text="${news.title}" />
+                </h2>
+                <small th:class="news-block-time-line" th:text="${news.publicationRomanDateAndTime}" />
+            </section>
+        </div>
+        <a th:href="@{/addNews}">Add news</a>
+    </main>
+    <footer>
+        <small th:class="footer-info" th:text="${currentRomanDateAndTime} + ' in Pax Romana'" />
+    </footer>
+    <!-- <div th:text="${news.appearance.highlighted}" /> -->
+    <!-- <div th:text="${news.text}" /> -->
+</body>
+</html>

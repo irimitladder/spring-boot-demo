@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title th:text="${title} + ' &mdash; ' + ${news.title}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <header>
+        <h1 th:text="${news.title}" />
+    </header>
+    <main>
+        <p th:text="${news.text}" />
+        <div class="news-author-line"><th:block th:each="newsAuthor, newsAuthorIterationStatus : ${news.authors}"><th:block th:if="${not newsAuthorIterationStatus.first}" th:text="', '" /><span th:text="${newsAuthor.name}" /></th:block></div>
+        <small th:class="news-time-line" th:text="${news.publicationRomanDateAndTime}" />
+        <a th:href="@{/updateNews(id=${news.id})}">Update news</a>
+        <a th:href="@{/deleteNews(id=${news.id})}" onclick="if (!(confirm('Are you sure you want to delete this news?'))) return false">Delete news</a>
+        <a th:href="@{/}">Back to home</a>
+    </main>
+    <footer>
+        <small th:class="footer-info" th:text="${currentRomanDateAndTime} + ' in Pax Romana'" />
+    </footer>
+</body>
+</html>

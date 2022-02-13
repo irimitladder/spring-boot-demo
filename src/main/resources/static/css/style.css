@@ -1,0 +1,113 @@
+html {
+    font: 13px/16px -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue", "Oxygen", "Cantarell", "Arial", sans-serif;
+    color: #041b26;
+}
+
+body {
+    margin: 0;
+    background: #f2f4f4;
+}
+
+header {
+    background-color: #00aa87;
+    box-shadow: 0 0 2px 2px rgba(3, 113, 90, 0.7), 0 0 2px 0 rgba(3, 113, 90, 0.7);
+}
+
+main > a {
+    display: block;
+    width: max-content;
+    margin: 16px;
+    background-color: #fafafb;
+    border-radius: 4px;
+    padding: 8px;
+    box-shadow: 0 1px 1px 0 rgba(4, 27, 38, 0.2), 0 0 1px 0 rgba(4, 27, 38, 0.1);
+    text-decoration: none;
+    color: #041b26;
+}
+
+main > a:hover {
+    background-color: #f2f4f4;
+}
+
+main > a:active {
+    background-color: #00aa87;
+    color: white;
+}
+
+footer {
+    border-top: 1px solid rgba(4, 27, 38, 0.1);
+}
+
+p {
+    white-space: pre-line;
+}
+
+h1 {
+    margin: 0 16px;
+    line-height: 64px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+
+h2 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    line-height: 21.6px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h2 a {
+    display: block;
+    width: max-content;
+    border-bottom: 1px solid rgba(0, 89, 255, 0.2);
+    color: #0059ff;
+}
+
+h2 small {
+    display: block;
+    width: max-content;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.news-block {
+    width: 312px;
+    margin: 20px 16px 16px;
+    background-color: white;
+    border: 1px solid rgba(4, 27, 38, 0.1);
+    padding: 24px;
+}
+
+.news-author-line {
+    text-align: end;
+}
+
+.news-block-author-line {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.news-time-line {
+    display: block;
+    text-align: end;
+    font-size: 13px;
+}
+
+.news-block-time-line {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.footer-info {
+    display: block;
+    margin: 24px 16px;
+    font-size: 13px;
+}

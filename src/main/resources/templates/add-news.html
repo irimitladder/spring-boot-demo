@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title th:text="${title} + ' &mdash; Add News'" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <header>
+        <h1>Add News</h1>
+    </header>
+    <main>
+        <form action="#" th:action="@{/saveNews}" th:object="${news}" method="POST">
+            <input type="hidden" th:field="*{id}">
+            <div><input type="text" id="newsText" th:field="*{title}"><label for="newsText">Title</label></div>
+            <div><textarea th:field="*{text}" placeholder="Text" /></div>
+            <div><input type="number" id="newsVerticalPosition" min="0" max="99" th:field="*{appearance.verticalPosition}"><label for="newsVerticalPosition">Line</label></div>
+            <div><input type="number" id="newsHorizontalPosition" min="0" max="99" th:field="*{appearance.horizontalPosition}"><label for="newsHorizontalPosition">Column</label></div>
+            <div><input type="checkbox" id="newsHighlighted" th:field="*{appearance.highlighted}"><label for="newsHighlighted">Is highlighted?</label></div>
+            <div><button type="submit">Save</button></div>
+        </form>
+        <a th:href="@{/}">Back to home</a>
+    </main>
+    <footer>
+        <small th:class="footer-info" th:text="${currentRomanDateAndTime} + ' in Pax Romana'" />
+    </footer>
+</body>
+</html>
